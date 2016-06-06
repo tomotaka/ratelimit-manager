@@ -36,6 +36,7 @@
             except RateLimitError as e:
                 print 'limited by rule: %s' % e.rule
 
+
 You can also check if limit can tick or not with calling `is_tick_ok()`.
 
 
