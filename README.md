@@ -17,9 +17,7 @@
 2. just call `tick()` per each call, if limit exceeded, `tick()` will raise RateLimitError
 
 
-    # -*- coding: utf-8 -*-
     from rlmanager import RateLimit, RateLimitError
-
     limit = RateLimit(100, 1000)  # permit only 100calls per 1sec
 
     def _protected_api(a, b):
@@ -36,6 +34,7 @@
             except RateLimitError as e:
                 print 'limited by rule: %s' % e.rule
 
+
 You can also check if limit can tick or not with calling `is_tick_ok()`.
 
 
@@ -48,7 +47,7 @@ You can also check if limit can tick or not with calling `is_tick_ok()`.
 You can apply multiple rate-limit rules with RateLimitManager.  
 tick_all() will raise RateLimitError if call count violates any of the rule.
 
-    # -*- coding: utf-8 -*-
+
     from rlmanager import RateLimitManager, RateLimitError
 
     limits = RateLimitManager(
